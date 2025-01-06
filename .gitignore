@@ -1,0 +1,4 @@
+data/images/training
+data/images/validation
+*.DS_Store
+__pycache__

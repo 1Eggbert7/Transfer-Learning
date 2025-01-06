@@ -1,0 +1,114 @@
+
+self.scheduler = CyclicLR(self.optimizer_new, base_lr=0.0001, max_lr=0.005)
+91.6
+89.99
+0.9046321525885559
+0.8910081743869209
+0.9073569482288828 # with 20
+
+self.scheduler = CyclicLR(self.optimizer_new, base_lr=0.0005, max_lr=0.008)
+0.907356948228882
+0.8910081743869209
+0.8950953678474114 # after 20 epochs
+
+First attempt of Gradual unfreezing for 10 epochs: SDG optimizer
+0.9100817438692098
+0.9114441416893733
+0.9073569482288828
+
+Switched to Adam Optimizer
+0.7806539509536785 (first run but didnt add parameters like betas=(0.9, 0.999), eps=1e-8, weight_decay=0) # 10 episodes
+0.8623978201634878 #increased batch size to 16 and 20 episodes
+0.82 with some params
+0.8228882833787466 (self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.001, pretrained_lr = 0.0001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.001)
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.001, pretrained_lr = 0.0005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.001)
+0.6280653950953679
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.001, pretrained_lr = 0.0001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.832425068119891
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.001, pretrained_lr = 0.00005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.8651226158038147
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.001, pretrained_lr = 0.00001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.9168937329700273
+0.9073569482288828
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.001, pretrained_lr = 0.000005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.9128065395095368
+0.9168937329700273
+0.9168937329700273
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.005, pretrained_lr = 0.000005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.8651226158038147
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.85, 0.999), eps=1e-8, weight_decay=0)
+0.9059945504087193
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.8, 0.999), eps=1e-8, weight_decay=0)
+0.9128065395095368
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.8, 0.99), eps=1e-8, weight_decay=0)
+0.9087193460490464
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.9168937329700273
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.9, 0.9999), eps=1e-8, weight_decay=0)
+0.9128065395095368
+
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0)
+0.9128065395095368
+0.9141689373297003
+0.9196185286103542
+0.9141689373297003
+
+(self, num_classes, criterion=nn.CrossEntropyLoss(), optimizer=optim.Adam, lr=0.0005, pretrained_lr = 0.000005, betas=(0.9, 0.999), eps=1e-8, weight_decay=0) # with augmentation
+0.9141689373297003
+0.9223433242506812 # 30 episodes
+0.9182561307901907 # 50 episodes
+
+started using scheduler torch.optim.lr_scheduler.StepLR
+0.9114441416893733 # step 5 gamma 0.2
+0.9223433242506812 # step 1 gamma 0.99 20 eps
+0.9182561307901907 # step 1 gamma 0.99 30 eps
+0.9250681198910081 # step 1 gamma 0.99 35 eps
+
+0.9168937329700273 # step 3 gamma 0.5
+0.9087193460490464 # step 3 gamma 0.3
+
+0.9332425068119891 # step 3 gamma 0.9 eps 20 (also added self.model.train() in train func maybe that did sth)
+0.9264305177111717
+0.9332425068119891 # 30 epochs
+
+0.9305177111716622 # eps 20 changed rotation to 8
+0.9196185286103542 # eps 20 rotation 12
+
+added Dropout
+0.9223433242506812 # step 3 gamma 0.9 eps 20 Dropout 0.5 (loss was at around 100)
+also 0.92 ish # step 3 gamma 0.9 eps 30 Dropout 0.5
+
+0.9223433242506812 # Dropout 0.3
+0.92ish # Dropout 0.1 20 eps
+0.9332425068119891 # Dropout 0 20 eps
+
+Resnet 50:
+0.9400544959128065 # Dropout 0 20 eps
+0.9073569482288828 # 3 epochs
+
+
+0.9318801089918256 # lucky run with 4 epochs lr=0.0007
+
+0.9332425068119891 # 10 epochs rest back to normal (lr = 0.0005 etc)
+
+0.9209809264305178 # 10 eps 0.1 weight_decay
+
+0.9359673024523161 # 20 eps 0.1 wd
+
+# scheduler gamma 0.8
+
+Further Ideas:
+- Dropout 
+- lr in higher layers even lower (like multiply pretrained lr with 0.8 per deeper layer)
