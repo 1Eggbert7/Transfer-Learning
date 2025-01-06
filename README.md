@@ -4,8 +4,8 @@ This project explores the use of **Transfer Learning** with **Convolutional Neur
 
 ## Authors
 - Alexander Leszczynski - aleles@kth.se
-- Jule Marie Schmidt - jmsch@kth.se
-- Dominykas Jogela - jogela@kth.se
+- Jule Marie Schmidt
+- Dominykas Jogela
 
 ## Abstract
 The study incorporates transfer learning and pseudo-labeling to improve model performance in scenarios with limited labeled data. Key outcomes include:
