@@ -3,7 +3,7 @@
 This project explores the use of **Transfer Learning** with **Convolutional Neural Networks (ConvNets)** and **Pseudo-Labeling**, a semi-supervised learning technique, for multi-class breed classification. The work fine-tunes a pre-trained ResNet-50 model on the **Oxford-IIIT Pet Dataset** to classify 37 different pet breeds.
 
 ## Authors
-- Alexander Leszczynski - aleles@kth.se
+- Alexander Leszczynski - alexander.leszczynski@yahoo.de
 - Jule Marie Schmidt
 - Dominykas Jogela
 
